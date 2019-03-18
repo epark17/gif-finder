@@ -12,43 +12,75 @@ class App extends Component {
     super();
     this.state = {
       query: '',
-      results: [],
-      // message: '', // might not need
-      // onLoad: true, //
+      gifs: [],
+      message: '', // might not need, can use loader instead
+      isLoading: true,
       // sortData: false, //
       // filterType: null, //
     };
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // getTrending might need another API_KEY because can't use it do to CORS prob
+  handleChange(evt) {
+    this.setState({ query: evt.target.value });
+  }
+
+  // getTrending might need another API_KEY because can't use it due to CORS prob
   async handleSubmit(evt) {
+    evt.preventDefault();
+    this.setState({ message: 'Loading GIFs...' }); // might not need this, can use loader instead
     try {
       const http = 'https://api.giphy.com/v1/gifs/search?';
-      const query = 'q=funny+cat'; // hardcoded for testing
-      // `q=${this.state.query}`;
+      // const query = 'q=funny+cat'; // hardcoded for testing
+      const query = `q=${this.state.query}`;
       const key = `&api_key=${API_KEY}`;
       const limit = '&limit=20'; // default is 25 btw
       const searchEndpoint = http + query + key + limit;
       const { data } = await axios.get(searchEndpoint);
 
-      console.log('working!', data.data);
+      console.log('data?', data.data);
+      this.setState({
+        gifs: data.data,
+        message: `Search results for "${this.state.query}"`,
+        isLoading: false,
+        // sortData: false,
+        // filterType: null
+      });
     } catch (err) {
       console.error(err);
     }
+
+    // this.setState({ query: '' });
   }
 
-  // componentDidMount() {
-  //   this.handleSubmit();
-  // }
-
   render() {
+    const { query, gifs, isLoading, message } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Giphy Search</h1>
-        </header>
-        <SearchResult />
+        <h1 className="App-title">Giphy Search</h1>
+        <form className="container" onSubmit={this.handleSubmit}>
+          <div className="input-group">
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Search for Gifs..."
+              value={query}
+              onChange={this.handleChange}
+            />
+            <div className="input-group-btn">
+              <button
+                className="btn btn-primary"
+                id="searchBtn"
+                type="submit"
+                disabled={!query}
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </form>
+        {isLoading ? null : <SearchResult message={message} gifs={gifs} />}
       </div>
     );
   }
