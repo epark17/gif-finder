@@ -16,3 +16,15 @@ body {
 .App {
   text-align: center;
 }
+
+.App-header {
+  background-color: transparent;
+  height: 90px;
+  padding: 30px;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.App-title {
+  font-size: 3em;
+}
