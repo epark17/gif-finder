@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 import SearchResult from './components/SearchResult';
-// import SearchForm from './components/SearchForm';
+import SearchForm from './components/SearchForm';
 
 const API_KEY = 'TqGuGJDGgTUN67F8wqeBS0zTwMNDYVJO';
 
@@ -55,32 +55,19 @@ class App extends Component {
   }
 
   render() {
-    const { query, gifs, isLoading, message } = this.state;
+    const { query, gifs, message, isLoading } = this.state;
     return (
       <div className="App">
-        <h1 className="App-title">Giphy Search</h1>
-        <form className="container" onSubmit={this.handleSubmit}>
-          <div className="input-group">
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Search for Gifs..."
-              value={query}
-              onChange={this.handleChange}
-            />
-            <div className="input-group-btn">
-              <button
-                className="btn btn-primary"
-                id="searchBtn"
-                type="submit"
-                disabled={!query}
-              >
-                Search
-              </button>
-            </div>
-          </div>
-        </form>
-        {isLoading ? null : <SearchResult message={message} gifs={gifs} />}
+        <header className="App-header">
+          <h1 className="App-title">Giphy Search</h1>
+        </header>
+        <SearchForm
+          onSubmit={this.handleSubmit}
+          onChange={this.handleChange}
+          query={query}
+        />
+        {/* null, need to replace that with something... */}
+        {isLoading ? null : <SearchResult gifs={gifs} message={message} />}
       </div>
     );
   }

@@ -11,15 +11,16 @@ import React from 'react';
 // };
 
 const SearchForm = props => {
+  const { onSubmit, onChange, query } = props;
   return (
-    <form className="container" onSubmit={this.handleSubmit}>
+    <form className="container" onSubmit={onSubmit}>
       <div className="input-group">
         <input
           className="form-control"
           type="text"
           placeholder="Search for Gifs..."
           value={query}
-          onChange={this.handleChange}
+          onChange={onChange}
         />
         <div className="input-group-btn">
           <button
