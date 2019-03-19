@@ -2,6 +2,7 @@ import React from 'react';
 
 import SearchCard from './SearchCard';
 
+// work on styling
 const SearchResult = props => {
   const { gifs } = props;
   console.log('gifs', gifs);

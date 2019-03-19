@@ -1,6 +1,6 @@
 import React from 'react';
 
-// work on styling later
+// work on styling
 const SearchForm = props => {
   const { onSubmit, onChange, query } = props;
   return (
