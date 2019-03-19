@@ -13,16 +13,16 @@ class App extends Component {
     this.state = {
       query: '',
       gifs: [],
-      message: '',
+      searchMessage: '',
       isLoading: true,
-      sortData: false, //
-      filterType: null, //
+      dataSort: false, //
+      // filterType: null, // what if instead of null it's false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.onSort = this.onSort.bind(this);
-    this.onFilter = this.onFilter.bind(this);
-    this.onClearFilter = this.onClearFilter.bind(this);
+    this.onSortByDate = this.onSortByDate.bind(this);
+    // this.onFilterByRatings = this.onFilterByRatings.bind(this);
+    // this.onClearFilter = this.onClearFilter.bind(this);
   }
 
   handleChange(evt) {
@@ -31,21 +31,18 @@ class App extends Component {
 
   async handleSubmit(evt) {
     evt.preventDefault();
-    this.setState({ message: 'Loading GIFs...' }); // why is this not working?
     try {
-      const http = 'https://api.giphy.com/v1/gifs/search?';
-      const query = `q=${this.state.query}`;
-      const key = `&api_key=${API_KEY}`;
-      const limit = '&limit=20'; // default is 25 btw
-      const searchEndpoint = http + query + key + limit;
+      const searchEndpoint = `https://api.giphy.com/v1/gifs/search?q=${
+        this.state.query
+      }&api_key=${API_KEY}&limit=6`;
       const { data } = await axios.get(searchEndpoint);
 
       this.setState({
         gifs: data.data,
-        message: `Search results for "${this.state.query}"`,
+        searchMessage: `Search results for "${this.state.query}"`,
         isLoading: false,
-        sortData: false,
-        filterType: null,
+        dataSort: false,
+        // filterType: null,
       });
     } catch (err) {
       console.error(err);
@@ -53,26 +50,26 @@ class App extends Component {
     this.setState({ query: '' });
   }
 
-  onSort() {
-    this.setState({ sortData: true });
+  onSortByDate() {
+    this.setState({ dataSort: true });
   }
 
-  onFilter(type) {
-    this.setState({ filterType: type });
-  }
+  // onFilterByRatings(type) {
+  //   this.setState({ filterType: type });
+  // }
 
-  onClearFilter() {
-    this.setState({ filterType: null });
-  }
+  // onClearFilter() {
+  //   this.setState({ filterType: null }); //
+  // }
 
   render() {
     const {
       query,
       gifs,
-      message,
+      searchMessage,
       isLoading,
-      sortData,
-      filterType,
+      dataSort,
+      // filterType,
     } = this.state;
     return (
       <div className="App">
@@ -84,16 +81,15 @@ class App extends Component {
           onChange={this.handleChange}
           query={query}
         />
-        {/* null, need to replace that with something... */}
         {isLoading ? null : (
           <SearchResults
             gifs={gifs}
-            message={message}
-            sortData={sortData}
-            filterType={filterType}
-            onSort={this.onSort}
-            onFilter={this.onFilter}
-            onClearFilter={this.onClearFilter}
+            searchMessage={searchMessage}
+            dataSort={dataSort}
+            onSortByDate={this.onSortByDate}
+            // filterType={filterType}
+            // onFilterByRatings={this.onFilterByRatings}
+            // onClearFilter={this.onClearFilter}
           />
         )}
       </div>

@@ -14,12 +14,7 @@ const SearchForm = props => {
           placeholder="Search for Gifs..."
         />
         <div className="input-group-btn">
-          <button
-            type="submit"
-            className="btn btn-primary"
-            id="searchBtn"
-            disabled={!query}
-          >
+          <button type="submit" className="btn btn-primary">
             Search
           </button>
         </div>
