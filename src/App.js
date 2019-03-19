@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import SearchResults from './components/SearchResults';
 import SearchForm from './components/SearchForm';
 
 const API_KEY = 'TqGuGJDGgTUN67F8wqeBS0zTwMNDYVJO';
-
 class App extends Component {
   constructor() {
     super();
