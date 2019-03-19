@@ -1,17 +1,19 @@
 import React from 'react';
 
 const SearchCard = props => {
-  // console.log(props);
   const title = props.gif.title;
   const fixedHeightImageURL = props.gif.images.fixed_height.url;
 
+  //might change div to React.Fragment once I figure grid out...
   return (
-    <div className="col-md-3 col-sm-6 mb-5">
-      <div className="card">
-        <h5 className="card-header">{title}</h5>
-        <img src={fixedHeightImageURL} alt={title} />
-      </div>
-    </div>
+    <React.Fragment>
+      <h5 className="card-title">{title}</h5>
+      <img
+        className="mx-auto card-img-top"
+        src={fixedHeightImageURL}
+        alt={title}
+      />
+    </React.Fragment>
   );
 };
 

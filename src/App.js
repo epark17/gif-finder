@@ -26,10 +26,9 @@ class App extends Component {
     this.setState({ query: evt.target.value });
   }
 
-  // getTrending might need another API_KEY because can't use it due to CORS prob
   async handleSubmit(evt) {
     evt.preventDefault();
-    this.setState({ message: 'Loading GIFs...' }); // might not need this, can use loader instead
+    this.setState({ message: 'Loading GIFs...' }); // why is this not working?
     try {
       const http = 'https://api.giphy.com/v1/gifs/search?';
       const query = `q=${this.state.query}`;

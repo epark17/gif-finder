@@ -1,14 +1,10 @@
 import React from 'react';
 
-// work on styling
+// fix size of search input field and make it rounder?
 const SearchForm = props => {
   const { onSubmit, onChange, query } = props;
   return (
-    <form
-      className="container"
-      onSubmit={onSubmit}
-      style={{ marginBottom: '2rem' }}
-    >
+    <form className="container" onSubmit={onSubmit}>
       <div className="input-group">
         <input
           className="form-control"
@@ -19,8 +15,8 @@ const SearchForm = props => {
         />
         <div className="input-group-btn">
           <button
-            className="btn btn-primary"
             type="submit"
+            className="btn btn-primary"
             id="searchBtn"
             disabled={!query}
           >

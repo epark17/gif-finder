@@ -5,8 +5,6 @@ body {
   background-blend-mode: screen;
   padding-top: 4rem;
   min-height: 100vh;
-  /* margin: 0; */
-  /* padding: 0; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -27,4 +25,37 @@ body {
 
 .App-title {
   font-size: 3em;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 25px;
+  color: white;
+}
+
+/* .search-results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: span 1;
+
+  display: flex;
+  justify-content: center;
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+}
+ */
+
+/* might get rid of .card */
+.card {
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.results.card-deck .card {
+  min-width: 220px;
+  max-width: 220px;
 }
