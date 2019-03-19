@@ -1,6 +1,5 @@
 import React from 'react';
 
-// next time call this component AllGIFs
 const SearchResult = props => {
   // console.log('props', props.gifs);
   const { gifs } = props;
