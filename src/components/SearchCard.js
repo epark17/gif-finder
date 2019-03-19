@@ -7,9 +7,11 @@ const SearchCard = props => {
   //might change div to React.Fragment once I figure grid out...
   return (
     <React.Fragment>
-      <h5 className="card-title">{title}</h5>
+      <div className="card-body">
+        <h5 className="card-title">{title}</h5>
+      </div>
       <img
-        className="mx-auto card-img-top"
+        className="card-img-top img-fluid"
         src={fixedHeightImageURL}
         alt={title}
       />
