@@ -38,7 +38,6 @@ class App extends Component {
       const searchEndpoint = http + query + key + limit;
       const { data } = await axios.get(searchEndpoint);
 
-      console.log('data?', data.data);
       this.setState({
         gifs: data.data,
         message: `Search results for "${this.state.query}"`,

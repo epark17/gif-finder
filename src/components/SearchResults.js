@@ -1,27 +1,20 @@
 import React from 'react';
 
+import SearchCard from './SearchCard';
+
 const SearchResult = props => {
-  // console.log('props', props.gifs);
   const { gifs } = props;
+  console.log('gifs', gifs);
 
   return (
-    <div className="container">
-      <div className="row">
-        {gifs &&
-          gifs.map(gif => (
-            <div
-              key={gif.id}
-              className="col-md-4"
-              style={{ marginBottom: '2rem' }}
-            >
-              <div className="gifs_box">
-                <h1>hello for now</h1>
-              </div>
-            </div>
-          ))}
-        {/* <h1>huh</h1> */}
-      </div>
-    </div>
+    <React.Fragment>
+      {gifs &&
+        gifs.map(gif => (
+          <div key={gif.id} className="row" style={{ marginBottom: '2rem' }}>
+            <SearchCard gif={gif} />
+          </div>
+        ))}
+    </React.Fragment>
   );
 };
 
