@@ -2,12 +2,14 @@ import React from 'react';
 
 // next time call this component AllGIFs
 const SearchResult = props => {
-  console.log('props', props.gifs);
+  // console.log('props', props.gifs);
+  const { gifs } = props;
+
   return (
     <div className="container">
       <div className="row">
-        {props.gifs &&
-          props.gifs.map(gif => (
+        {gifs &&
+          gifs.map(gif => (
             <div
               key={gif.id}
               className="col-md-4"
@@ -18,7 +20,7 @@ const SearchResult = props => {
               </div>
             </div>
           ))}
-        <h1>huh</h1>
+        {/* <h1>huh</h1> */}
       </div>
     </div>
   );

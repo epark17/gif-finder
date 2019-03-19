@@ -1,32 +1,27 @@
 import React from 'react';
 
-// const SearchForm = props => {
-//   console.log('SearchForm.js is this working?');
-//   return (
-//     <form onSubmit={props.getResults} style={{ marginBottom: '2rem' }}>
-//       <input className="form-input" type="text" name="search_input" />
-//       <button className="form-button">Search</button>
-//     </form>
-//   );
-// };
-
+// work on styling later
 const SearchForm = props => {
   const { onSubmit, onChange, query } = props;
   return (
-    <form className="container" onSubmit={onSubmit}>
+    <form
+      className="container"
+      onSubmit={onSubmit}
+      style={{ marginBottom: '2rem' }}
+    >
       <div className="input-group">
         <input
           className="form-control"
           type="text"
-          placeholder="Search for Gifs..."
           value={query}
           onChange={onChange}
+          placeholder="Search for Gifs..."
         />
         <div className="input-group-btn">
           <button
             className="btn btn-primary"
-            id="searchBtn"
             type="submit"
+            id="searchBtn"
             disabled={!query}
           >
             Search

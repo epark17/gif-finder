@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 
-import SearchResult from './components/SearchResult';
+import SearchResults from './components/SearchResults';
 import SearchForm from './components/SearchForm';
 
 const API_KEY = 'TqGuGJDGgTUN67F8wqeBS0zTwMNDYVJO';
@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       query: '',
       gifs: [],
-      message: '', // might not need, can use loader instead
+      message: '',
       isLoading: true,
       // sortData: false, //
       // filterType: null, //
@@ -32,7 +32,6 @@ class App extends Component {
     this.setState({ message: 'Loading GIFs...' }); // might not need this, can use loader instead
     try {
       const http = 'https://api.giphy.com/v1/gifs/search?';
-      // const query = 'q=funny+cat'; // hardcoded for testing
       const query = `q=${this.state.query}`;
       const key = `&api_key=${API_KEY}`;
       const limit = '&limit=20'; // default is 25 btw
@@ -51,7 +50,7 @@ class App extends Component {
       console.error(err);
     }
 
-    // this.setState({ query: '' });
+    this.setState({ query: '' });
   }
 
   render() {
@@ -67,7 +66,7 @@ class App extends Component {
           query={query}
         />
         {/* null, need to replace that with something... */}
-        {isLoading ? null : <SearchResult gifs={gifs} message={message} />}
+        {isLoading ? null : <SearchResults gifs={gifs} message={message} />}
       </div>
     );
   }
