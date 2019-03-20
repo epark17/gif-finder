@@ -2,7 +2,7 @@ import React from 'react';
 
 import SearchCategories from './SearchCategories';
 import SearchCard from './SearchCard';
-import { getFilteredByRating, getSortedByDate } from '../utils/filters';
+import { getSortedByDate } from '../utils/filters';
 
 // work on styling: want 4 cards / columns aligned in center equally spread out
 // deploy on heroku and travis CI
