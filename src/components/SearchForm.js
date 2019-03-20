@@ -1,8 +1,7 @@
 import React from 'react';
 
-// fix size of search input field and make it rounder?
 const SearchForm = props => {
-  const { onSubmit, onChange, query } = props;
+  const { query, onSubmit, onChange } = props;
   return (
     <form className="container" onSubmit={onSubmit}>
       <div className="input-group">

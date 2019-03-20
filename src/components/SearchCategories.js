@@ -15,19 +15,10 @@ const SearchCategories = props => (
       type="button"
       className="btn btn-info"
       id="rating-btn"
-      onClick={() => props.onFilterByRatings('r')} //have to fix this
+      onClick={() => props.onFilterByRatings('r')}
       style={{ margin: '5px' }}
     >
       Rated R
-    </button> */}
-    {/* <button
-      type="button"
-      className="btn btn-info"
-      id="clear-btn"
-      onClick={props.onClearFilter}
-      style={{ margin: '5px' }}
-    >
-      Clear
     </button> */}
   </div>
 );

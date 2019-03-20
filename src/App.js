@@ -15,14 +15,13 @@ class App extends Component {
       gifs: [],
       searchMessage: '',
       isLoading: true,
-      dataSort: false, //
-      // filterType: null, // what if instead of null it's false
+      dataSort: false,
+      ratingType: null,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onSortByDate = this.onSortByDate.bind(this);
     // this.onFilterByRatings = this.onFilterByRatings.bind(this);
-    // this.onClearFilter = this.onClearFilter.bind(this);
   }
 
   handleChange(evt) {
@@ -34,7 +33,7 @@ class App extends Component {
     try {
       const searchEndpoint = `https://api.giphy.com/v1/gifs/search?q=${
         this.state.query
-      }&api_key=${API_KEY}&limit=6`;
+      }&api_key=${API_KEY}&limit=6`; //18
       const { data } = await axios.get(searchEndpoint);
 
       this.setState({
@@ -42,7 +41,7 @@ class App extends Component {
         searchMessage: `Search results for "${this.state.query}"`,
         isLoading: false,
         dataSort: false,
-        // filterType: null,
+        // ratingType: null,
       });
     } catch (err) {
       console.error(err);
@@ -55,11 +54,7 @@ class App extends Component {
   }
 
   // onFilterByRatings(type) {
-  //   this.setState({ filterType: type });
-  // }
-
-  // onClearFilter() {
-  //   this.setState({ filterType: null }); //
+  //   this.setState({ ratingType: true });
   // }
 
   render() {
@@ -69,7 +64,7 @@ class App extends Component {
       searchMessage,
       isLoading,
       dataSort,
-      // filterType,
+      // ratingType,
     } = this.state;
     return (
       <div className="App">
@@ -87,9 +82,8 @@ class App extends Component {
             searchMessage={searchMessage}
             dataSort={dataSort}
             onSortByDate={this.onSortByDate}
-            // filterType={filterType}
+            // ratingType={ratingType}
             // onFilterByRatings={this.onFilterByRatings}
-            // onClearFilter={this.onClearFilter}
           />
         )}
       </div>

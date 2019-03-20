@@ -2,31 +2,26 @@ import React from 'react';
 
 import SearchCategories from './SearchCategories';
 import SearchCard from './SearchCard';
-import { getSortedByDate } from '../utils/filters';
+import { getSortedByDate } from '../utils/filters'; //getFilteredByRating
 
 // work on styling: want 4 cards / columns aligned in center equally spread out
-// deploy on heroku and travis CI
-// write testings
 const SearchResult = props => {
   const {
     gifs,
     searchMessage,
     dataSort,
     onSortByDate,
-    // filterType,
+    // ratingType,
     // onFilterByRatings,
-    // onClearFilter,
   } = props;
 
-  console.log('gifs', gifs);
-
+  // console.log('gifs', gifs);
   return (
     <React.Fragment>
       <p className="searchMessage">{searchMessage}</p>
       <SearchCategories
         onSortByDate={onSortByDate}
         // onFilterByRatings={onFilterByRatings}
-        // onClearFilter={onClearFilter}
       />
       <br />
       <div className="results card-deck justify-content-around">
@@ -51,4 +46,28 @@ const SearchResult = props => {
   );
 };
 
+/*
+const isSortedData = dataSort ? getSortedByDate(gifs) : gifs;
+{ratingType ? (
+  getFilteredByRating(ratingType, isSortedData).length !== 0 ? (
+    getFilteredByRating(ratingType, isSortedData).map(gif => (
+      <div className="m-1 card bg-transparent" key={gif.id}>
+        <div className="align-content-between align-items-center card-body">
+          <SearchCard gif={gif} />
+        </div>
+      </div>
+    ))
+  ) : (
+    <p>Sorry! There's no gif matching this rating.</p>
+  )
+) : (
+  isSortedData.map(gif => (
+    <div className="m-1 card bg-transparent" key={gif.id}>
+      <div className="align-content-between align-items-center card-body">
+        <SearchCard gif={gif} />
+      </div>
+    </div>
+  ))
+)}
+*/
 export default SearchResult;
