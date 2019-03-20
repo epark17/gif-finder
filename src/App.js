@@ -14,10 +14,11 @@ class App extends Component {
     super();
     this.state = {
       query: '',
-      gifs: [],
+      gifs: [], // this is data
       searchMessage: '',
       isSearching: true,
       isDataSorting: false,
+      filtered: [],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -54,9 +55,13 @@ class App extends Component {
   }
 
   onClearFilter() {
-    if (this.state.isDataSorting) {
-      this.setState({ isDataSorting: !this.state.isDataSorting }); //or can use some ! why is this not working...
-    }
+    console.log('Clear was clicked');
+    // if (this.state.isDataSorting) {
+    //   this.setState({
+    //     isDataSorting: !this.state.isDataSorting,
+    //     gifs: data.data,
+    //   }); //not working...
+    // }
   }
 
   render() {
