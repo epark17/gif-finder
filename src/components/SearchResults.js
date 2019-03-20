@@ -4,7 +4,6 @@ import SearchCategories from './SearchCategories';
 import SearchCard from './SearchCard';
 import { getSortedByDate } from '../utils/filters'; //getFilteredByRating
 
-// work on styling: want 4 cards / columns aligned in center equally spread out
 const SearchResult = props => {
   const {
     gifs,
