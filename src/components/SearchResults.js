@@ -23,23 +23,25 @@ const SearchResult = props => {
         onClearFilter={onClearFilter}
       />
       <br />
-      <div className="results card-deck justify-content-around">
-        {/* if isDataSorting is true (only true if user clicked onSortByDate button) */}
-        {isDataSorting
-          ? getSortedByDate(gifs).map(gif => (
-              <div className="m-1 card bg-transparent" key={gif.id}>
-                <div className="align-content-between align-items-center card-body">
-                  <SearchCard gif={gif} />
+      <div className="container">
+        <div className="results card-deck justify-content-around">
+          {/* if isDataSorting is true (only true if user clicked onSortByDate button) */}
+          {isDataSorting
+            ? getSortedByDate(gifs).map(gif => (
+                <div className="m-1 card bg-transparent" key={gif.id}>
+                  <div className="align-content-between align-items-center card-body">
+                    <SearchCard gif={gif} />
+                  </div>
                 </div>
-              </div>
-            ))
-          : gifs.map(gif => (
-              <div className="m-1 card bg-transparent" key={gif.id}>
-                <div className="align-content-between align-items-center card-body">
-                  <SearchCard gif={gif} />
+              ))
+            : gifs.map(gif => (
+                <div className="m-1 card bg-transparent" key={gif.id}>
+                  <div className="align-content-between align-items-center card-body">
+                    <SearchCard gif={gif} />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+        </div>
       </div>
     </React.Fragment>
   );
