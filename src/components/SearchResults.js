@@ -9,10 +9,9 @@ const SearchResult = props => {
   const {
     gifs,
     searchMessage,
-    dataSort,
+    isDataSorting,
     onSortByDate,
-    // ratingType,
-    // onFilterByRatings,
+    onClearFilter,
   } = props;
 
   // console.log('gifs', gifs);
@@ -21,12 +20,12 @@ const SearchResult = props => {
       <p className="searchMessage">{searchMessage}</p>
       <SearchCategories
         onSortByDate={onSortByDate}
-        // onFilterByRatings={onFilterByRatings}
+        onClearFilter={onClearFilter}
       />
       <br />
       <div className="results card-deck justify-content-around">
-        {/* if dataSort is true (only true if user clicked onSortByDate button) */}
-        {dataSort
+        {/* if isDataSorting is true (only true if user clicked onSortByDate button) */}
+        {isDataSorting
           ? getSortedByDate(gifs).map(gif => (
               <div className="m-1 card bg-transparent" key={gif.id}>
                 <div className="align-content-between align-items-center card-body">
@@ -46,28 +45,4 @@ const SearchResult = props => {
   );
 };
 
-/*
-const isSortedData = dataSort ? getSortedByDate(gifs) : gifs;
-{ratingType ? (
-  getFilteredByRating(ratingType, isSortedData).length !== 0 ? (
-    getFilteredByRating(ratingType, isSortedData).map(gif => (
-      <div className="m-1 card bg-transparent" key={gif.id}>
-        <div className="align-content-between align-items-center card-body">
-          <SearchCard gif={gif} />
-        </div>
-      </div>
-    ))
-  ) : (
-    <p>Sorry! There's no gif matching this rating.</p>
-  )
-) : (
-  isSortedData.map(gif => (
-    <div className="m-1 card bg-transparent" key={gif.id}>
-      <div className="align-content-between align-items-center card-body">
-        <SearchCard gif={gif} />
-      </div>
-    </div>
-  ))
-)}
-*/
 export default SearchResult;

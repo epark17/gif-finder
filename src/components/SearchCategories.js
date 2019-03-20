@@ -6,20 +6,20 @@ const SearchCategories = props => (
       type="button"
       className="btn btn-info"
       id="sort-btn"
-      onClick={props.onSortByDate} // so when user clicks this dataSort becomes true
+      onClick={props.onSortByDate} // so when user clicks this isDataSorting becomes true
       style={{ margin: '5px' }}
     >
       Newest to Oldest
     </button>
-    {/* <button
+    <button
       type="button"
       className="btn btn-info"
-      id="rating-btn"
-      onClick={() => props.onFilterByRatings('r')}
+      id="clear-btn"
+      onClick={props.onClearFilter} // so when user clicks this isDataSorting becomes false
       style={{ margin: '5px' }}
     >
-      Rated R
-    </button> */}
+      Clear
+    </button>
   </div>
 );
 

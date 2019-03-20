@@ -6,6 +6,8 @@ import './App.css';
 import SearchResults from './components/SearchResults';
 import SearchForm from './components/SearchForm';
 
+// const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
+// const API_KEY = `${process.env.REACT_APP_GIPHY_API_KEY}`;
 const API_KEY = 'TqGuGJDGgTUN67F8wqeBS0zTwMNDYVJO';
 class App extends Component {
   constructor() {
@@ -15,13 +17,12 @@ class App extends Component {
       gifs: [],
       searchMessage: '',
       isSearching: true,
-      dataSort: false,
-      ratingType: null,
+      isDataSorting: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onSortByDate = this.onSortByDate.bind(this);
-    // this.onFilterByRatings = this.onFilterByRatings.bind(this);
+    this.onClearFilter = this.onClearFilter.bind(this);
   }
 
   handleChange(evt) {
@@ -40,8 +41,7 @@ class App extends Component {
         gifs: data.data,
         searchMessage: `Search results for "${this.state.query}"`,
         isSearching: false,
-        dataSort: false,
-        // ratingType: null,
+        isDataSorting: false,
       });
     } catch (err) {
       console.error(err);
@@ -50,12 +50,14 @@ class App extends Component {
   }
 
   onSortByDate() {
-    this.setState({ dataSort: true });
+    this.setState({ isDataSorting: !this.state.isDataSorting });
   }
 
-  // onFilterByRatings(type) {
-  //   this.setState({ ratingType: true });
-  // }
+  onClearFilter() {
+    if (this.state.isDataSorting) {
+      this.setState({ isDataSorting: !this.state.isDataSorting }); //or can use some ! why is this not working...
+    }
+  }
 
   render() {
     const {
@@ -63,8 +65,7 @@ class App extends Component {
       gifs,
       searchMessage,
       isSearching,
-      dataSort,
-      // ratingType,
+      isDataSorting,
     } = this.state;
     return (
       <div className="App">
@@ -72,19 +73,17 @@ class App extends Component {
           <h1 className="App-title">Giphy Search</h1>
         </header>
         <SearchForm
+          query={query}
           onSubmit={this.handleSubmit}
           onChange={this.handleChange}
-          query={query}
         />
-        {/* feel like I could fix this... &&? */}
         {isSearching ? null : (
           <SearchResults
             gifs={gifs}
             searchMessage={searchMessage}
-            dataSort={dataSort}
+            isDataSorting={isDataSorting}
             onSortByDate={this.onSortByDate}
-            // ratingType={ratingType}
-            // onFilterByRatings={this.onFilterByRatings}
+            onClearFilter={this.onClearFilter}
           />
         )}
       </div>

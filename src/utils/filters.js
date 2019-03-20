@@ -13,3 +13,28 @@ export const getFilteredByRating = (filterType, gifsArr) => {
     ? gifsArr.filter(gif => gif.rating === filterType)
     : gifsArr;
 };
+
+/*
+const isSortedData = isDataSorting ? getSortedByDate(gifs) : gifs;
+{ratingType ? (
+  getFilteredByRating(ratingType, isSortedData).length !== 0 ? (
+    getFilteredByRating(ratingType, isSortedData).map(gif => (
+      <div className="m-1 card bg-transparent" key={gif.id}>
+        <div className="align-content-between align-items-center card-body">
+          <SearchCard gif={gif} />
+        </div>
+      </div>
+    ))
+  ) : (
+    <p>Sorry! There's no gif matching this rating.</p>
+  )
+) : (
+  isSortedData.map(gif => (
+    <div className="m-1 card bg-transparent" key={gif.id}>
+      <div className="align-content-between align-items-center card-body">
+        <SearchCard gif={gif} />
+      </div>
+    </div>
+  ))
+)}
+*/
