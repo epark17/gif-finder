@@ -35,7 +35,7 @@ class App extends Component {
     try {
       const searchEndpoint = `https://api.giphy.com/v1/gifs/search?q=${
         this.state.query
-      }&api_key=${API_KEY}&limit=15`; //18
+      }&api_key=${API_KEY}&limit=20`; //15
       const { data } = await axios.get(searchEndpoint);
 
       this.setState({
