@@ -14,7 +14,7 @@ class App extends Component {
       query: '',
       gifs: [],
       searchMessage: '',
-      isLoading: true,
+      isSearching: true,
       dataSort: false,
       ratingType: null,
     };
@@ -39,7 +39,7 @@ class App extends Component {
       this.setState({
         gifs: data.data,
         searchMessage: `Search results for "${this.state.query}"`,
-        isLoading: false,
+        isSearching: false,
         dataSort: false,
         // ratingType: null,
       });
@@ -62,7 +62,7 @@ class App extends Component {
       query,
       gifs,
       searchMessage,
-      isLoading,
+      isSearching,
       dataSort,
       // ratingType,
     } = this.state;
@@ -76,7 +76,8 @@ class App extends Component {
           onChange={this.handleChange}
           query={query}
         />
-        {isLoading ? null : (
+        {/* feel like I could fix this... &&? */}
+        {isSearching ? null : (
           <SearchResults
             gifs={gifs}
             searchMessage={searchMessage}
