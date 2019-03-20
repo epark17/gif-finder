@@ -4,7 +4,6 @@ const SearchCard = props => {
   const title = props.gif.title;
   const fixedHeightImageURL = props.gif.images.fixed_height.url;
 
-  //might change div to React.Fragment once I figure grid out...
   return (
     <React.Fragment>
       <div className="card-body">
