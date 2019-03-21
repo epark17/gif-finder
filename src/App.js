@@ -21,12 +21,13 @@ class App extends Component {
       searchMessage: '',
       isSearching: true,
       isDataSorting: false,
-      filtered: [],
+      ratingType: null,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onSortByDate = this.onSortByDate.bind(this);
     this.onClearFilter = this.onClearFilter.bind(this);
+    this.onSortByRating = this.onSortByRating.bind(this);
   }
 
   handleChange(evt) {
@@ -46,6 +47,7 @@ class App extends Component {
         searchMessage: `Search results for "${this.state.query}"`,
         isSearching: false,
         isDataSorting: false,
+        ratingType: null,
       });
     } catch (err) {
       console.error(err);
@@ -55,30 +57,23 @@ class App extends Component {
   }
 
   onSortByDate() {
-    // console.log('onSortByDate', this.state.gifs);
     this.setState({ isDataSorting: !this.state.isDataSorting });
   }
 
   onClearFilter() {
-    // console.log('Clear was clicked');
-    // console.log('onClearFilter', this.state.gifs);
     this.setState({ isDataSorting: false });
-
-    // if (this.state.isDataSorting) {
-    //   this.setState({
-    //     isDataSorting: !this.state.isDataSorting,
-    //     gifs: data.data,
-    //   }); //not working...
-    // }
   }
 
-  // must create filter -> rating? onSortByRating()
+  onSortByRating(ratingType) {
+    this.setState({ ratingType });
+  }
 
   render() {
     const {
       query,
       gifs,
       searchMessage,
+      ratingType,
       isSearching,
       isDataSorting,
     } = this.state;
@@ -97,8 +92,10 @@ class App extends Component {
             gifs={gifs}
             searchMessage={searchMessage}
             isDataSorting={isDataSorting}
+            ratingType={ratingType}
             onSortByDate={this.onSortByDate}
             onClearFilter={this.onClearFilter}
+            onSortByRating={this.onSortByRating}
           />
         )}
       </div>
