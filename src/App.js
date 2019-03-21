@@ -26,8 +26,8 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onSortByDate = this.onSortByDate.bind(this);
-    this.onClearFilter = this.onClearFilter.bind(this);
     this.onSortByRating = this.onSortByRating.bind(this);
+    this.onClearFilter = this.onClearFilter.bind(this);
   }
 
   handleChange(evt) {
@@ -57,15 +57,15 @@ class App extends Component {
   }
 
   onSortByDate() {
-    this.setState({ isDataSorting: !this.state.isDataSorting });
-  }
-
-  onClearFilter() {
-    this.setState({ isDataSorting: false });
+    this.setState({ isDataSorting: true, ratingType: null });
   }
 
   onSortByRating(ratingType) {
-    this.setState({ ratingType });
+    this.setState({ isDataSorting: false, ratingType });
+  }
+
+  onClearFilter() {
+    this.setState({ isDataSorting: false, ratingType: null });
   }
 
   render() {
@@ -94,8 +94,8 @@ class App extends Component {
             isDataSorting={isDataSorting}
             ratingType={ratingType}
             onSortByDate={this.onSortByDate}
-            onClearFilter={this.onClearFilter}
             onSortByRating={this.onSortByRating}
+            onClearFilter={this.onClearFilter}
           />
         )}
       </div>
