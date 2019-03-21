@@ -1,5 +1,6 @@
 import React from 'react';
 
+// do want to add Rated R or Rated G or Rated PG
 const SearchCategories = props => (
   <div className="col-xs-3">
     <button

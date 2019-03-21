@@ -14,6 +14,8 @@ const SearchResult = props => {
   } = props;
 
   // console.log('gifs', gifs);
+  const renderedGifs = gifs.slice(); // make of copy of gifs from state and then sort this GIFs array!
+
   return (
     <React.Fragment>
       <p className="searchMessage">{searchMessage}</p>
@@ -26,7 +28,7 @@ const SearchResult = props => {
         <div className="results card-deck justify-content-around">
           {/* if isDataSorting is true (only true if user clicked onSortByDate button) */}
           {isDataSorting
-            ? getSortedByDate(gifs).map(gif => (
+            ? getSortedByDate(renderedGifs).map(gif => (
                 <div className="m-1 card bg-transparent" key={gif.id}>
                   <div className="align-content-between align-items-center card-body">
                     <SearchCard gif={gif} />

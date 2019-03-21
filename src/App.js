@@ -6,9 +6,12 @@ import './App.css';
 import SearchResults from './components/SearchResults';
 import SearchForm from './components/SearchForm';
 
+// why are these not working?
 // const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
 // const API_KEY = `${process.env.REACT_APP_GIPHY_API_KEY}`;
 const API_KEY = 'TqGuGJDGgTUN67F8wqeBS0zTwMNDYVJO';
+
+// want to try these in newer format and change methods to arrow functions so don't have to bind
 class App extends Component {
   constructor() {
     super();
@@ -47,15 +50,20 @@ class App extends Component {
     } catch (err) {
       console.error(err);
     }
+
     this.setState({ query: '' });
   }
 
   onSortByDate() {
+    // console.log('onSortByDate', this.state.gifs);
     this.setState({ isDataSorting: !this.state.isDataSorting });
   }
 
   onClearFilter() {
-    console.log('Clear was clicked');
+    // console.log('Clear was clicked');
+    // console.log('onClearFilter', this.state.gifs);
+    this.setState({ isDataSorting: false });
+
     // if (this.state.isDataSorting) {
     //   this.setState({
     //     isDataSorting: !this.state.isDataSorting,
@@ -63,6 +71,8 @@ class App extends Component {
     //   }); //not working...
     // }
   }
+
+  // must create filter -> rating? onSortByRating()
 
   render() {
     const {
