@@ -10,7 +10,7 @@ const SearchForm = props => {
           type="text"
           value={query}
           onChange={onChange}
-          placeholder="Search for Gifs..."
+          placeholder="Search all the GIFS"
         />
         <div className="input-group-btn">
           <button type="submit" className="btn btn-primary">
