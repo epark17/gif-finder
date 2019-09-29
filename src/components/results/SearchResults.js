@@ -1,8 +1,8 @@
 import React from 'react';
 
 import SearchCategories from './SearchCategories';
-import SearchCard from './searchResults/SearchCard';
-import { getFilteredByRating, getSortedByDate } from '../utils/filters';
+import SearchCard from './SearchCard';
+import { getFilteredByRating, getSortedByDate } from '../../utils/filters';
 
 const SearchResult = props => {
   const {

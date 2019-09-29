@@ -3,8 +3,8 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-import SearchResults from './components/SearchResults';
-import SearchForm from './components/SearchForm';
+import SearchResults from './components/results/SearchResults';
+import SearchForm from './components/results/SearchForm';
 
 const API_KEY = process.env.REACT_APP_GIPHY_KEY;
 
