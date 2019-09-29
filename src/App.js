@@ -9,28 +9,20 @@ import SearchForm from './components/results/SearchForm';
 const API_KEY = process.env.REACT_APP_GIPHY_KEY;
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      query: '',
-      gifs: [], // this is data
-      searchMessage: '',
-      isSearching: true,
-      isDataSorting: false,
-      ratingType: null,
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.onSortByDate = this.onSortByDate.bind(this);
-    this.onSortByRating = this.onSortByRating.bind(this);
-    this.onClearFilter = this.onClearFilter.bind(this);
-  }
+  state = {
+    query: '',
+    gifs: [], // this is data
+    searchMessage: '',
+    isSearching: true,
+    isDataSorting: false,
+    ratingType: null,
+  };
 
-  handleChange(evt) {
-    this.setState({ query: evt.target.value });
-  }
+  handleChange = evt => {
+    this.setState({ query: evt.target.value }); // only query needed
+  };
 
-  async handleSubmit(evt) {
+  handleSubmit = async evt => {
     evt.preventDefault();
     try {
       const searchEndpoint = `https://api.giphy.com/v1/gifs/search?q=${this.state.query}&api_key=${API_KEY}&limit=20`; //15
@@ -47,20 +39,20 @@ class App extends Component {
       console.error(err);
     }
 
-    this.setState({ query: '' });
-  }
+    this.setState({ query: '' }); // clear input after search
+  };
 
-  onSortByDate() {
+  onSortByDate = () => {
     this.setState({ isDataSorting: true, ratingType: null });
-  }
+  };
 
-  onSortByRating(ratingType) {
+  onSortByRating = ratingType => {
     this.setState({ isDataSorting: false, ratingType });
-  }
+  };
 
-  onClearFilter() {
+  onClearFilter = () => {
     this.setState({ isDataSorting: false, ratingType: null });
-  }
+  };
 
   render() {
     const {
@@ -71,6 +63,7 @@ class App extends Component {
       isSearching,
       isDataSorting,
     } = this.state;
+
     return (
       <div className="App">
         <header className="App-header">
