@@ -4,8 +4,6 @@ https://serene-basin-73337.herokuapp.com/
 
 - would be great if can work on more filters
 - would be great if I can add individual spinners for each gif while loading
-- would be great if I can hide API_KEY
-  - https://stackoverflow.com/questions/48699820/how-do-i-hide-api-key-in-create-react-app NOT WORKING THOU
 - would like to work on styling - render four columns 5 rows of equally spaced out deck with margin left right bottom
 - would like to work on more test specs
   https://github.com/ivytsoi/lib-search/tree/master/client/components check out

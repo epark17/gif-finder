@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import SearchResults from './components/results/SearchResults';
@@ -18,12 +17,12 @@ class App extends Component {
     ratingType: null,
   };
 
-  handleChange = evt => {
-    this.setState({ query: evt.target.value }); // only query needed
+  handleChange = e => {
+    this.setState({ query: e.target.value }); // only query needed
   };
 
-  handleSubmit = async evt => {
-    evt.preventDefault();
+  handleSubmit = async e => {
+    e.preventDefault();
     try {
       const searchEndpoint = `https://api.giphy.com/v1/gifs/search?q=${this.state.query}&api_key=${API_KEY}&limit=20`; //15
       const { data } = await axios.get(searchEndpoint);
