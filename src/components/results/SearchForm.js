@@ -1,7 +1,6 @@
 import React from 'react';
 
-const SearchForm = props => {
-  const { query, onSubmit, onChange } = props;
+const SearchForm = ({ query, onSubmit, onChange }) => {
   return (
     <form className="container" onSubmit={onSubmit}>
       <div className="input-group">

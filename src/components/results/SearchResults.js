@@ -4,17 +4,15 @@ import SearchCategories from './SearchCategories';
 import SearchCard from './SearchCard';
 import { getFilteredByRating, getSortedByDate } from '../../utils/filters';
 
-const SearchResult = props => {
-  const {
-    gifs,
-    searchMessage,
-    ratingType,
-    isDataSorting,
-    onSortByDate,
-    onSortByRating,
-    onClearFilter,
-  } = props;
-
+const SearchResult = ({
+  gifs,
+  searchMessage,
+  ratingType,
+  isDataSorting,
+  onSortByDate,
+  onSortByRating,
+  onClearFilter,
+}) => {
   const renderedGifs = gifs.slice(); // make copy of gifs from state and then sort this GIFs array!
   // console.log(gifs);
 
