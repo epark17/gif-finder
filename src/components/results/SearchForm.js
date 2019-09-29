@@ -9,7 +9,7 @@ const SearchForm = ({ query, onSubmit, onChange }) => {
           type="text"
           value={query}
           onChange={onChange}
-          placeholder="Search all the GIFS"
+          placeholder="Search all the GIFs"
         />
         <div className="input-group-btn">
           <button type="submit" className="btn btn-primary">

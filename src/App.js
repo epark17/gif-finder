@@ -67,7 +67,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Giphy Search</h1>
+          <h1 className="App-title">GIF Finder</h1>
         </header>
         <SearchForm
           query={query}
