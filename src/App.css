@@ -5,9 +5,9 @@ body {
   background-blend-mode: screen;
   padding-top: 4rem;
   min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24,6 +24,7 @@ body {
 }
 
 .App-title {
+  font-family: 'Big Shoulders Display', cursive;
   font-size: 3em;
 }
 
