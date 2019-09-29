@@ -1,7 +1,8 @@
 import React from 'react';
 
 const SearchCategories = ({ onSortByDate, onSortByRating, onClearFilter }) => (
-  <div className="col-xs-3">
+  // <div className="col-xs-3">
+  <div className="text-center mb-4">
     <button
       type="button"
       className="btn btn-info"

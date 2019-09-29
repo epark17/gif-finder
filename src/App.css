@@ -9,24 +9,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: transparent;
-  height: 90px;
-  padding: 30px;
-  color: white;
-  margin-bottom: 2rem;
-}
-
-.App-title {
-  font-family: 'Big Shoulders Display', cursive;
-  font-size: 5em;
-  /* text-decoration: none; */
-}
-
 .searchMessage {
   margin-top: 20px;
   font-size: 25px;
@@ -40,10 +22,16 @@ body {
 }
 
 .container {
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
 }
 
-.results.card-deck .card {
-  min-width: 220px;
-  max-width: 220px;
+.fa-smile-wink {
+  color: #7ac5d8;
 }
+.fa-smile-wink:hover {
+  color: #b49fda;
+}
+
+/*
+#fda085 #fee140 #b49fda #96e6a1
+*/

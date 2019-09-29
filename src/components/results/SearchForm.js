@@ -2,17 +2,20 @@ import React from 'react';
 
 const SearchForm = ({ query, onSubmit, onChange }) => {
   return (
-    <form className="container" onSubmit={onSubmit}>
-      <div className="input-group">
+    <form onSubmit={onSubmit}>
+      <div className="form-group">
         <input
-          className="form-control"
           type="text"
+          className="form-control form-control-lg"
+          placeholder="Search all the GIFs"
           value={query}
           onChange={onChange}
-          placeholder="Search all the GIFs"
         />
         <div className="input-group-btn">
-          <button type="submit" className="btn btn-primary">
+          <button
+            className="btn btn-primary btn-lg btn-block mb-5"
+            type="submit"
+          >
             Search
           </button>
         </div>

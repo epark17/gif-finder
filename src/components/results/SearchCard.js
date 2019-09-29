@@ -7,13 +7,13 @@ const SearchCard = ({ gif }) => {
   return (
     <React.Fragment>
       <div className="card-body">
-        {/* might get ride of card title */}
-        {/* <h5 className="card-title">{title}</h5> */}
         <img
           className="card-img-top img-fluid"
           src={fixedHeightImageURL}
           alt={title}
         />
+        {/* <h5 class="card-title">Special title treatment</h5> */}
+        {/* <p className="card-text">{title}</p> */}
       </div>
     </React.Fragment>
   );

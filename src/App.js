@@ -64,15 +64,19 @@ class App extends Component {
     } = this.state;
 
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">GIF Finder</h1>
-        </header>
-        <SearchForm
-          query={query}
-          onSubmit={this.handleSubmit}
-          onChange={this.handleChange}
-        />
+      <div className="container">
+        <div className="card card-body mb-4 p-4">
+          <h1 className="display-4 text-center">
+            <i className="fas fa-smile-wink"></i> GIF Finder
+          </h1>
+          <p className="lead text-center">Get your favorite GIF</p>
+          <SearchForm
+            query={query}
+            onSubmit={this.handleSubmit}
+            onChange={this.handleChange}
+          />
+        </div>
+
         {isSearching ? null : (
           <SearchResults
             gifs={gifs}

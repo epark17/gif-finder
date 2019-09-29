@@ -18,43 +18,43 @@ const SearchResult = ({
 
   return (
     <React.Fragment>
-      <p className="searchMessage">{searchMessage}</p>
+      <h3 className="searchMessage text-center mb-4">{searchMessage}</h3>
       <SearchCategories
         onSortByDate={onSortByDate}
         onSortByRating={onSortByRating}
         onClearFilter={onClearFilter}
       />
       <br />
-      <div className="container">
-        <div className="results card-deck justify-content-around">
-          {(isDataSorting &&
-            getSortedByDate(renderedGifs).map(gif => (
-              <div className="m-1 card bg-transparent" key={gif.id}>
-                <div className="align-content-between align-items-center card-body">
-                  <SearchCard gif={gif} />
-                </div>
+      {/* justify-content-around"> */}
+      <div className="row justify-content-between">
+        {(isDataSorting &&
+          getSortedByDate(renderedGifs).map(gif => (
+            <div className="col-md-3">
+              <div className="m-2 card bg-transparent" key={gif.id}>
+                <SearchCard gif={gif} />
               </div>
-            ))) ||
-            (ratingType &&
-              (getFilteredByRating(ratingType, renderedGifs).length !== 0 ? (
-                getFilteredByRating(ratingType, renderedGifs).map(gif => (
-                  <div className="m-1 card bg-transparent" key={gif.id}>
-                    <div className="align-content-between align-items-center card-body">
-                      <SearchCard gif={gif} />
-                    </div>
+            </div>
+          ))) ||
+          (ratingType &&
+            (getFilteredByRating(ratingType, renderedGifs).length !== 0 ? (
+              getFilteredByRating(ratingType, renderedGifs).map(gif => (
+                <div className="col-md-3">
+                  <div className="m-2 card bg-transparent" key={gif.id}>
+                    <SearchCard gif={gif} />
                   </div>
-                ))
-              ) : (
-                <p>Oops! None of the search results match this rating.</p>
-              ))) ||
-            gifs.map(gif => (
-              <div className="m-1 card bg-transparent" key={gif.id}>
-                <div className="align-content-between align-items-center card-body">
-                  <SearchCard gif={gif} />
                 </div>
+              ))
+            ) : (
+              <p>Oops! None of the search results match this rating.</p>
+            ))) ||
+          gifs.map(gif => (
+            // col-3  col-lg-3
+            <div className="col-md-3">
+              <div className="m-2 card bg-transparent" key={gif.id}>
+                <SearchCard gif={gif} />
               </div>
-            ))}
-        </div>
+            </div>
+          ))}
       </div>
     </React.Fragment>
   );
