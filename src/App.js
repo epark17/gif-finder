@@ -6,12 +6,8 @@ import './App.css';
 import SearchResults from './components/SearchResults';
 import SearchForm from './components/SearchForm';
 
-// why are these not working?
-// const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
-// const API_KEY = `${process.env.REACT_APP_GIPHY_API_KEY}`;
-const API_KEY = 'TqGuGJDGgTUN67F8wqeBS0zTwMNDYVJO';
+const API_KEY = process.env.REACT_APP_GIPHY_KEY;
 
-// want to try these in newer format and change methods to arrow functions so don't have to bind
 class App extends Component {
   constructor() {
     super();
@@ -37,9 +33,7 @@ class App extends Component {
   async handleSubmit(evt) {
     evt.preventDefault();
     try {
-      const searchEndpoint = `https://api.giphy.com/v1/gifs/search?q=${
-        this.state.query
-      }&api_key=${API_KEY}&limit=20`; //15
+      const searchEndpoint = `https://api.giphy.com/v1/gifs/search?q=${this.state.query}&api_key=${API_KEY}&limit=20`; //15
       const { data } = await axios.get(searchEndpoint);
 
       this.setState({
