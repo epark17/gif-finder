@@ -1,12 +1,12 @@
 import React from 'react';
 
-const SearchCategories = props => (
+const SearchCategories = ({ onSortByDate, onSortByRating, onClearFilter }) => (
   <div className="col-xs-3">
     <button
       type="button"
       className="btn btn-info"
       id="sort-btn"
-      onClick={props.onSortByDate}
+      onClick={onSortByDate}
       style={{ margin: '5px' }}
     >
       Newest to Oldest
@@ -15,7 +15,7 @@ const SearchCategories = props => (
       type="button"
       className="btn btn-info"
       id="rated-g-btn"
-      onClick={() => props.onSortByRating('g')}
+      onClick={() => onSortByRating('g')}
       style={{ margin: '5px' }}
     >
       Rated G
@@ -24,7 +24,7 @@ const SearchCategories = props => (
       type="button"
       className="btn btn-info"
       id="rated-pg-btn"
-      onClick={() => props.onSortByRating('pg')}
+      onClick={() => onSortByRating('pg')}
       style={{ margin: '5px' }}
     >
       Rated PG
@@ -33,7 +33,7 @@ const SearchCategories = props => (
       type="button"
       className="btn btn-info"
       id="rated-r-btn"
-      onClick={() => props.onSortByRating('r')}
+      onClick={() => onSortByRating('r')}
       style={{ margin: '5px' }}
     >
       Rated R
@@ -42,7 +42,7 @@ const SearchCategories = props => (
       type="button"
       className="btn btn-info"
       id="clear-btn"
-      onClick={props.onClearFilter}
+      onClick={onClearFilter}
       style={{ margin: '5px' }}
     >
       Clear
