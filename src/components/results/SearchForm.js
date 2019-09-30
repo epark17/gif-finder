@@ -12,10 +12,7 @@ const SearchForm = ({ query, onSubmit, onChange }) => {
           onChange={onChange}
         />
         <div className="input-group-btn">
-          <button
-            className="btn btn-primary btn-lg btn-block mb-5"
-            type="submit"
-          >
+          <button className="btn btn-info btn-lg btn-block mb-4" type="submit">
             Search
           </button>
         </div>

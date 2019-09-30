@@ -66,7 +66,7 @@ class App extends Component {
     return (
       <div className="container">
         <div className="card card-body mb-4 p-4">
-          <h1 className="display-4 text-center">
+          <h1 className="title display-4 text-center">
             <i className="fas fa-smile-wink"></i> GIF Finder
           </h1>
           <p className="lead text-center">Get your favorite GIF</p>

@@ -45,7 +45,9 @@ const SearchResult = ({
                 </div>
               ))
             ) : (
-              <p>Oops! None of the search results match this rating.</p>
+              <p className="searchNotFound">
+                Oops! None of the search results match this rating.
+              </p>
             ))) ||
           gifs.map(gif => (
             // col-3  col-lg-3

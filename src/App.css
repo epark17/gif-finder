@@ -9,15 +9,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.title {
+  font-family: 'Roboto Mono', monospace;
+}
+
 .searchMessage {
-  margin-top: 20px;
-  font-size: 25px;
-  color: white;
+  margin-top: 2rem;
+  /* font: ; */
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.searchNotFound {
+  /* font: ; */
+  color: #fff;
 }
 
 .card {
-  border: 2px solid white;
-  border-radius: 4px;
+  border: 1px solid #fff;
+  border-radius: 10px;
   padding: 0.5rem;
 }
 
@@ -35,3 +45,32 @@ body {
 /*
 #fda085 #fee140 #b49fda #96e6a1
 */
+
+/* https://stackoverflow.com/questions/47479477/responsive-card-image-with-fixed-height-in-bootstrap-4 */
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper:after {
+  content: '';
+  display: block;
+  padding-top: 75%;
+}
+
+.wrapper img {
+  width: auto;
+  height: 100%;
+  max-width: none;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+/* https://stackoverflow.com/questions/37287153/how-to-get-images-in-bootstraps-card-to-be-the-same-height-width */
+/* .card-img-top {
+  width: 100%;
+  height: 10vw;
+  object-fit: cover;
+} */
