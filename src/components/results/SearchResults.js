@@ -2,6 +2,7 @@ import React from 'react';
 
 import SearchCategories from './SearchCategories';
 import SearchCard from './SearchCard';
+// import Spinner from '../layout/Spinner';
 import { getFilteredByRating, getSortedByDate } from '../../utils/filters';
 
 const SearchResult = ({
@@ -14,7 +15,6 @@ const SearchResult = ({
   onClearFilter,
 }) => {
   const renderedGifs = gifs.slice(); // make copy of gifs from state and then sort this GIFs array!
-  // console.log(gifs);
 
   return (
     <React.Fragment>
@@ -25,7 +25,15 @@ const SearchResult = ({
         onClearFilter={onClearFilter}
       />
       <br />
-      {/* justify-content-around"> */}
+
+      {
+        // if (gifs === undefined || !gifs.length) {
+        //   return <Spinner />
+        // } else {
+        //   // the code below - the gif results
+        // }
+      }
+
       <div className="row justify-content-between">
         {(isDataSorting &&
           getSortedByDate(renderedGifs).map(gif => (
