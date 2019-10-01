@@ -2,6 +2,30 @@ Deployed App to Heroku: https://serene-basin-73337.herokuapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## GIF Finder
+
+GIF Finder is a React application that can be used to search any GIFs. Users can also filter the search results: sort from Newest to Oldest, Rated G, Rated PG, and Rated R.
+
+### Technologies Used:
+
+- Giphy Public API (https://developers.giphy.com/)
+- Bootstrap CDN (https://www.bootstrapcdn.com/)
+- FontAwesome CDN (https://fontawesome.com/)
+- Google Fonts API (https://fonts.google.com/)
+- Jest (https://jestjs.io/)
+- Enzyme (https://airbnb.io/enzyme/)
+
+### Things I Would Like to Continue Working On or Add to This Project:
+
+- Use React's built-in Context API to manage state rather than have state in App.js (refactor)
+- Redesign architecture of app
+- Convert all class components to functional components and use Hooks
+- Add spinners to each card while GIFs are loading
+- Pagination to get more search results
+- Show a collection of trending GIFs on landing page
+- Add more filters
+- Change favicon
+
 ## Available Scripts
 
 In the project directory, you can run:
