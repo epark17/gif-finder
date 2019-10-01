@@ -1,13 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-https://serene-basin-73337.herokuapp.com/
-
-- would be great if can work on more filters
-- would be great if I can add individual spinners for each gif while loading
-- would like to work on more test specs
-  https://github.com/ivytsoi/lib-search/tree/master/client/components check out
-  https://codesandbox.io/s/v6n31p1kl
-
 ## Available Scripts
 
 In the project directory, you can run:
