@@ -24,6 +24,7 @@ Deployed App to Heroku: https://serene-basin-73337.herokuapp.com/
 - Pagination to get more search results
 - Show a collection of trending GIFs on landing page
 - Add more filters
+- Write more tests to learn more about Jest and Enzyme
 - Change favicon
 
 ## Available Scripts
