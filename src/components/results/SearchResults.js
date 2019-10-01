@@ -2,7 +2,7 @@ import React from 'react';
 
 import SearchCategories from './SearchCategories';
 import SearchCard from './SearchCard';
-import Spinner from '../layout/Spinner';
+import Spinner from '../Spinner';
 import { getFilteredByRating, getSortedByDate } from '../../utils/filters';
 
 const SearchResult = ({
