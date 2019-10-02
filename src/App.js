@@ -24,7 +24,7 @@ class App extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     try {
-      const searchEndpoint = `https://api.giphy.com/v1/gifs/search?q=${this.state.query}&api_key=${API_KEY}&limit=20`;
+      const searchEndpoint = `https://api.giphy.com/v1/gifs/search?q=${this.state.query}&api_key=${API_KEY}&limit=28`;
       const { data } = await axios.get(searchEndpoint);
 
       this.setState({

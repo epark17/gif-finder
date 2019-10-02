@@ -15,28 +15,33 @@ describe('<SearchCategories />', () => {
   });
 
   it('each button invokes its respective onClick fn passed down as props', () => {
-    const mockCallBackSortByDate = jest.fn();
-    // const mockCallBackFilterByRatings = jest.fn();
-    const mockCallBackClearFilter = jest.fn();
+    const mockCallbackSortByDate = jest.fn();
+    const mockCallbackSortByRatings = jest.fn();
+    const mockCallbackClearFilter = jest.fn();
 
     const buttons = shallow(
       <SearchCategories
-        onSortByDate={mockCallBackSortByDate}
-        // onFilterByRatings={mockCallBackFilterByRatings}
-        onClearFilter={mockCallBackClearFilter}
+        onSortByDate={mockCallbackSortByDate}
+        onSortByRating={mockCallbackSortByRatings}
+        onClearFilter={mockCallbackClearFilter}
       >
         FakeButtons
       </SearchCategories>
     );
 
     buttons.find('#sort-btn').simulate('click');
-    expect(mockCallBackSortByDate.mock.calls.length).toEqual(1);
+    expect(mockCallbackSortByDate.mock.calls.length).toEqual(1);
 
-    // buttons.find('#rating-btn').simulate('click');
-    // buttons.find('#rated-g-btn').simulate('click');
-    // expect(mockCallBackFilterByRatings.mock.calls.length).toEqual(2);
+    buttons.find('#rated-g-btn').simulate('click');
+    expect(mockCallbackSortByRatings.mock.calls.length).toEqual(1);
+
+    // buttons.find('#rated-pg-btn').simulate('click');
+    // expect(mockCallbackSortByRatings.mock.calls.length).toEqual(2);
+
+    // buttons.find('#rated-r-btn').simulate('click');
+    // expect(mockCallbackSortByRatings.mock.calls.length).toEqual(3);
 
     buttons.find('#clear-btn').simulate('click');
-    expect(mockCallBackClearFilter.mock.calls.length).toEqual(1);
+    expect(mockCallbackClearFilter.mock.calls.length).toEqual(1);
   });
 });

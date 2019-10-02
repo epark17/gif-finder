@@ -14,8 +14,6 @@ const SearchCard = ({ gif }) => {
             alt={title}
           />
         </div>
-        {/* <h5 class="card-title">{title}</h5> */}
-        {/* <p className="card-text">{title}</p> */}
       </div>
     </React.Fragment>
   );
