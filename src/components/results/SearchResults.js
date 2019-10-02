@@ -32,34 +32,19 @@ const SearchResult = ({
         <div className="row justify-content-between">
           {(isDataSorting &&
             getSortedByDate(renderedGifs).map(gif => (
-              <div className="col-md-3">
-                <div className="m-2 card bg-transparent" key={gif.id}>
-                  <SearchCard gif={gif} />
-                </div>
-              </div>
+              <SearchCard gif={gif} />
             ))) ||
             (ratingType &&
               (getFilteredByRating(ratingType, renderedGifs).length !== 0 ? (
                 getFilteredByRating(ratingType, renderedGifs).map(gif => (
-                  <div className="col-md-3">
-                    <div className="m-2 card bg-transparent" key={gif.id}>
-                      <SearchCard gif={gif} />
-                    </div>
-                  </div>
+                  <SearchCard gif={gif} />
                 ))
               ) : (
                 <p className="searchNotFound">
                   Oops! None of the search results match this rating.
                 </p>
               ))) ||
-            gifs.map(gif => (
-              // col-3  col-lg-3
-              <div className="col-md-3">
-                <div className="m-2 card bg-transparent" key={gif.id}>
-                  <SearchCard gif={gif} />
-                </div>
-              </div>
-            ))}
+            gifs.map(gif => <SearchCard gif={gif} />)}
         </div>
       )}
     </React.Fragment>

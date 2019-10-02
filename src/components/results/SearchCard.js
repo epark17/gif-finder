@@ -5,17 +5,20 @@ const SearchCard = ({ gif }) => {
   const fixedHeightImageURL = gif.images.fixed_height.url;
 
   return (
-    <React.Fragment>
-      <div className="card-body">
-        <div className="wrapper">
-          <img
-            className="card-img-top img-fluid"
-            src={fixedHeightImageURL}
-            alt={title}
-          />
+    // col-3  col-lg-3
+    <div className="col-md-3">
+      <div className="m-2 card bg-transparent" key={gif.id}>
+        <div className="card-body">
+          <div className="wrapper">
+            <img
+              className="card-img-top img-fluid"
+              src={fixedHeightImageURL}
+              alt={title}
+            />
+          </div>
         </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 
