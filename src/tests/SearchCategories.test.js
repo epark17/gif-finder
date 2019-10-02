@@ -4,7 +4,7 @@ import React from 'react';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import SearchCategories from '../components/results/SearchCategories';
+import SearchCategories from '../components/search/SearchCategories';
 
 configure({ adapter: new Adapter() });
 

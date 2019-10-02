@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 
-import SearchResults from './components/results/SearchResults';
-import SearchForm from './components/results/SearchForm';
+import SearchResults from './components/search/SearchResults';
+import SearchForm from './components/search/SearchForm';
 
 const API_KEY = process.env.REACT_APP_GIPHY_KEY;
 
