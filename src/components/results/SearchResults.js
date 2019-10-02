@@ -11,7 +11,7 @@ const SearchResult = ({
   ratingType,
   isDataSorting,
   onSortByDate,
-  onSortByRating,
+  onFilteredByRating,
   onClearFilter,
 }) => {
   const renderedGifs = gifs.slice(); // make copy of gifs from state and then sort this GIFs array!
@@ -21,7 +21,7 @@ const SearchResult = ({
       <h3 className="searchMessage text-center mb-4">{searchMessage}</h3>
       <SearchCategories
         onSortByDate={onSortByDate}
-        onSortByRating={onSortByRating}
+        onFilteredByRating={onFilteredByRating}
         onClearFilter={onClearFilter}
       />
       <br />

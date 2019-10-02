@@ -45,7 +45,7 @@ class App extends Component {
     this.setState({ isDataSorting: true, ratingType: null });
   };
 
-  onSortByRating = ratingType => {
+  onFilteredByRating = ratingType => {
     this.setState({ isDataSorting: false, ratingType });
   };
 
@@ -84,7 +84,7 @@ class App extends Component {
             isDataSorting={isDataSorting}
             ratingType={ratingType}
             onSortByDate={this.onSortByDate}
-            onSortByRating={this.onSortByRating}
+            onFilteredByRating={this.onFilteredByRating}
             onClearFilter={this.onClearFilter}
           />
         )}
