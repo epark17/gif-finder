@@ -5,8 +5,8 @@ const SearchCard = ({ gif }) => {
   const fixedHeightImageURL = gif.images.fixed_height.url;
 
   return (
-    // col-3  col-lg-3
-    <div className="col-md-3">
+    // col-md-3  col-lg-3
+    <div className="col-3">
       <div className="m-2 card bg-transparent" key={gif.id}>
         <div className="card-body">
           <div className="wrapper">
