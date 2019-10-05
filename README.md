@@ -26,6 +26,12 @@ Deployed App to Heroku: https://serene-basin-73337.herokuapp.com/
 - Add more filters
 - Write more tests to learn more about Jest and Enzyme
 - Change favicon
+- Accessibility
+  - research WAI-ARIA, use aria tags
+  - HTML/React aria tutorial
+  - testing with NVDA screen reader or Chrome extension ChromeVox screen reader
+  - https://reactjs.org/docs/accessibility.html
+  - https://medium.com/@emilymears/getting-started-with-web-accessibility-in-react-9e591fdb0d52
 
 ## Available Scripts
 
